@@ -15,7 +15,6 @@ import TimelineConnector from "@mui/lab/TimelineConnector";
 import TimelineContent from "@mui/lab/TimelineContent";
 import TimelineDot from "@mui/lab/TimelineDot";
 import TimelineItem, { timelineItemClasses } from "@mui/lab/TimelineItem";
-import Image from "next/image";
 import { motion } from "motion/react";
 
 function EducationCard() {
@@ -29,8 +28,8 @@ function EducationCard() {
       transition={{ duration: 1, delay: 0.8 }}
       viewport={{ once: true }}
     >
-      <Box>
-        <Paper elevation={12} sx={{ mb: 4, p: 5 }}>
+      <Box sx={{py:10}}>
+        <Container maxWidth="md">
           <Grid container spacing={1}>
             <Grid size={{ md: 8 }}>
               <Box>
@@ -46,8 +45,8 @@ function EducationCard() {
                 <Divider />
                 <motion.div
                   ref={ref}
-                  initial={{ opacity: 0}}
-                  whileInView={{ opacity: 1}}
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
                   transition={{ duration: 1, delay: 1.5 }}
                   viewport={{ once: true }}
                 >
@@ -71,12 +70,12 @@ function EducationCard() {
                   }}
                   component="img"
                   alt="The house from the offer."
-                  src="/image/Education.jpg"
+                  src="/image/Education.svg"
                 />
               </motion.div>
             </Grid>
           </Grid>
-        </Paper>
+        </Container>
       </Box>
     </motion.div>
   );

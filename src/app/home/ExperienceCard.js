@@ -15,8 +15,7 @@ import TimelineConnector from "@mui/lab/TimelineConnector";
 import TimelineContent from "@mui/lab/TimelineContent";
 import TimelineDot from "@mui/lab/TimelineDot";
 import TimelineItem, { timelineItemClasses } from "@mui/lab/TimelineItem";
-import Image from "next/image";
-import { useScroll, motion, useTransform, useInView } from "motion/react";
+import { motion } from "motion/react";
 
 function ExperienceCard() {
   const ref = useRef(null);
@@ -24,35 +23,56 @@ function ExperienceCard() {
   return (
     <motion.div
       ref={ref}
-      initial={{ opacity: 0,x:"-50%" }}
-      whileInView={{ opacity: 1, x:"0%" }}
-      transition={{"duration":1, "delay": 0.5}}
+      initial={{ opacity: 0, x: "-50%" }}
+      whileInView={{ opacity: 1, x: "0%" }}
+      transition={{ duration: 1, delay: 0.5 }}
       viewport={{ once: true }}
     >
-      <Box>
-        <Paper elevation={12} sx={{ mb: 4, mx: 0, p: 5 }}>
+      <Box sx={{ py: 10 }}>
+        <Container maxWidth="md">
           <Grid container spacing={1}>
             <Grid size={{ md: 8 }}>
               <Box>
-                <Typography variant="h5">Work Experience</Typography>
+                <motion.div
+                  initial={{ opacity: 0, x: "10%" }}
+                  whileInView={{ opacity: 1, x: "0%" }}
+                  transition={{ duration: 1, delay: 1 }}
+                  viewport={{ once: true }}
+                >
+                  <Typography variant="h5">Work Experience</Typography>
+                </motion.div>
                 <Divider />
-                <ExperienceInfo />
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  transition={{ duration: 1, delay: 1 }}
+                  viewport={{ once: true }}
+                >
+                  <ExperienceInfo />
+                </motion.div>
               </Box>
             </Grid>
             <Grid size={{ md: 4 }} sx={{ alignContent: "center" }}>
-              <Box
-                sx={{
-                  borderRadius: "20px",
-                  maxWidth: "100%",
-                  borderColor: "#7b53ff",
-                }}
-                component="img"
-                alt="Experience image"
-                src="/image/Experaine.jpg"
-              />
+              <motion.div
+                initial={{ opacity: 0, y: "10%" }}
+                whileInView={{ opacity: 1, y: "0%" }}
+                transition={{ duration: 1, delay: 1 }}
+                viewport={{ once: true }}
+              >
+                <Box
+                  sx={{
+                    borderRadius: "20px",
+                    maxWidth: "100%",
+                    borderColor: "#7b53ff",
+                  }}
+                  component="img"
+                  alt="Experience image"
+                  src="/image/Expericnce.svg"
+                />
+              </motion.div>
             </Grid>
           </Grid>
-        </Paper>
+        </Container>
       </Box>
     </motion.div>
   );
@@ -79,18 +99,12 @@ function ExperienceInfo() {
           <Typography variant="h6" component="span">
             Nakhon pathom rajabhat university
           </Typography>
-          <Grid container sx={{ justifyContent: "space-between" }}>
-            <Grid>
-              <Typography variant="body1" component="span">
-                Position: Computer Technical Officer (Computer Center)
-              </Typography>
-            </Grid>
-            <Grid>
-              <Typography variant="body2" color="text.disabled">
-                2022 – 2025
-              </Typography>
-            </Grid>
-          </Grid>
+          <Typography variant="body1" component="span">
+            Position: Computer Technical Officer (Computer Center)
+          </Typography>
+          <Typography variant="body2" color="text.disabled">
+            2022 – 2025
+          </Typography>
           <Typography variant="body2" sx={{ pl: 1 }}>
             • Developed camera status monitoring system using React.js and
             Python.

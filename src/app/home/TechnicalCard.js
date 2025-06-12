@@ -9,12 +9,6 @@ import {
   Typography,
 } from "@mui/material";
 import { useRef } from "react";
-import Person2Icon from "@mui/icons-material/Person2";
-import CakeIcon from "@mui/icons-material/Cake";
-import FaceIcon from "@mui/icons-material/Face";
-import CallIcon from "@mui/icons-material/Call";
-import EmailIcon from "@mui/icons-material/Email";
-import HomeIcon from "@mui/icons-material/Home";
 import { motion } from "motion/react";
 
 function TechnicalCard() {
@@ -28,8 +22,8 @@ function TechnicalCard() {
       transition={{ duration: 1, delay: 0.5 }}
       viewport={{ once: true }}
     >
-      <Box>
-        <Paper elevation={12} sx={{ mb: 4, p: 5 }}>
+      <Box sx={{ py: 10, bgcolor: "#f5f5f5" }}>
+        <Container maxWidth="md">
           <Grid container spacing={1}>
             <Grid size={{ md: 4 }} sx={{ alignContent: "center", pr: 2 }}>
               <motion.div
@@ -47,7 +41,7 @@ function TechnicalCard() {
                   }}
                   component="img"
                   alt="Technical logo."
-                  src="/image/Technical.jpg"
+                  src="/image/Technical.svg"
                 />
               </motion.div>
             </Grid>
@@ -87,7 +81,7 @@ function TechnicalCard() {
           >
             <IconBox />
           </motion.div>
-        </Paper>
+        </Container>
       </Box>
     </motion.div>
   );
@@ -101,7 +95,7 @@ function TechnicalInfo() {
       <Grid container spacing={1.5} sx={{ mt: 2 }}>
         <Typography variant="body2">
           • Developed and maintained frontend applications using HTML, CSS,
-          JavaScript, React.js, Vue.js, and ASP.NET
+          JavaScript, React.js and ASP.NET
         </Typography>
         <Typography variant="body2">
           • Developed backend systems and APIs using PHP, Python, C#, and
@@ -138,16 +132,8 @@ function IconBox() {
           <Box
             sx={{ height: "80px" }}
             component="img"
-            alt="The house from the offer."
+            alt="React logo"
             src="https://images.icon-icons.com/2415/PNG/512/react_original_wordmark_logo_icon_146375.png"
-          />
-        </Grid>
-        <Grid item size={{ xs: 6, md: 2 }}>
-          <Box
-            sx={{ height: "80px" }}
-            component="img"
-            alt="The house from the offer."
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGgyp0cGPFS4V3HEtHeE2hO0udk6QbTA5Kcg&s"
           />
         </Grid>
         <Grid item size={{ xs: 6, md: 2 }}>
@@ -182,6 +168,14 @@ function IconBox() {
             src="https://www.globalcloudteam.com/wp-content/uploads/2023/08/javascript.webp"
           />
         </Grid>
+        <Grid item size={{ xs: 6, md: 2 }}>
+          <Box
+            sx={{ height: "80px" }}
+            component="img"
+            alt="The house from the offer."
+            src="https://logos-world.net/wp-content/uploads/2021/10/Python-Symbol.png"
+          />
+        </Grid>
       </Grid>
       <Grid container sx={{ m: 2 }} justifyContent="center" textAlign="center">
         <Grid item size={{ xs: 6, md: 2 }}>
@@ -190,14 +184,6 @@ function IconBox() {
             component="img"
             alt="The house from the offer."
             src="https://upload.wikimedia.org/wikipedia/commons/1/18/ISO_C%2B%2B_Logo.svg"
-          />
-        </Grid>
-        <Grid item size={{ xs: 6, md: 2 }}>
-          <Box
-            sx={{ height: "80px" }}
-            component="img"
-            alt="The house from the offer."
-            src="https://logos-world.net/wp-content/uploads/2021/10/Python-Symbol.png"
           />
         </Grid>
         <Grid item size={{ xs: 6, md: 2 }}>
@@ -230,6 +216,14 @@ function IconBox() {
             component="img"
             alt="The house from the offer."
             src="https://images.seeklogo.com/logo-png/37/2/pytorch-logo-png_seeklogo-372199.png"
+          />
+        </Grid>
+        <Grid item size={{ xs: 6, md: 2 }}>
+          <Box
+            sx={{ height: "80px" }}
+            component="img"
+            alt="Tensorflow logo"
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/TensorFlow_logo.svg/2560px-TensorFlow_logo.svg.png"
           />
         </Grid>
       </Grid>
