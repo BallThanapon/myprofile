@@ -7,6 +7,7 @@ import TechnicalCard from "./TechnicalCard";
 import ExperienceCard from "./ExperienceCard";
 import AwardsCard from "./AwardsCard";
 import HeadCard from "./HeadCard";
+import WorkCard from "./Workcard";
 
 function HomePage() {
   return (
@@ -28,6 +29,9 @@ function HomePage() {
       </div>
       <div>
         <AwardsCard />
+      </div>
+      <div>
+        <WorkCard/>
       </div>
     </>
   );
