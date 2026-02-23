@@ -50,7 +50,7 @@ function PersonnalInfoCard() {
                     }}
                     component="img"
                     alt="Profile image"
-                    src="https://scontent.fbkk17-1.fna.fbcdn.net/v/t1.6435-9/189718638_4076684399079559_4873442875736120024_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=a5f93a&_nc_ohc=Crjxwjh4iqMQ7kNvwGtijSl&_nc_oc=AdnybLoLtZwjneY46N1BYiJbvaALHx6U7zW2dCvSe-BLF1zzstlKZWB9BW1XZgDl4K4&_nc_zt=23&_nc_ht=scontent.fbkk17-1.fna&_nc_gid=HK92Xl-7dUt9KAdjC5-g7A&oh=00_AfP7K3AUe3V_TwzsytGALl9xNFK1Neuzv7pNtzYKrYB25Q&oe=686F9BF6"
+                    src="/profile.png"
                   />
                 </motion.div>
               </Grid>
