@@ -7,7 +7,7 @@ import ExperienceCard from "./ExperienceCard";
 import AwardsCard from "./AwardsCard";
 import HeadCard from "./HeadCard";
 import WorkCard from "./Workcard";
-import { LanguageProvider, useLang } from "../component/LanguageContext";
+import { useLang } from "../component/LanguageContext";
 import Fab from "@mui/material/Fab";
 import { Typography } from "@mui/material";
 function HomePage() {
@@ -24,6 +24,8 @@ function HomePage() {
             position: "fixed",
             top: 16,
             right: 16,
+            backgroundImage: `url(${t.logo_flag})`,
+            backgroundSize: "cover",
           }}
         >
           <Typography sx={{ fontSize: 12 }}>{t.switchBtn}</Typography>

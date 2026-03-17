@@ -10,6 +10,7 @@ import {
 } from "@mui/material";
 import { useRef } from "react";
 import { motion } from "motion/react";
+import { useLang } from "../component/LanguageContext";
 
 function TechnicalCard() {
   const ref = useRef(null);
@@ -90,34 +91,30 @@ function TechnicalCard() {
 export default TechnicalCard;
 
 function TechnicalInfo() {
+  const {t} = useLang({});
   return (
     <>
       <Grid container spacing={1.5} sx={{ mt: 2 }}>
         <Typography variant="body2">
-          • Developed and maintained frontend applications using HTML, CSS,
-          JavaScript, React.js and ASP.NET
+          • {t.technical_skills[0]}
         </Typography>
         <Typography variant="body2">
-          • Developed backend systems and APIs using PHP, Python, C#, and
-          Node.js
+          • {t.technical_skills[1]}
         </Typography>
         <Typography variant="body2">
-          • Developed various IoT systems using C++, Python, and Node-RED
+          • {t.technical_skills[2]}
         </Typography>
         <Typography variant="body2">
-          • Familiar with various data communication methods, including API
-          (REST), MQTT, WebSocket, TCP, and UDP protocols
+          • {t.technical_skills[3]}
         </Typography>
         <Typography variant="body2">
-          • Database Management: SQL (MySQL, PostgreSQL), MongoDB, LDAP
+          • {t.technical_skills[4]}
         </Typography>
         <Typography variant="body2">
-          • Machine Learning & Deep Learning: TensorFlow, PyTorch, Scikit-learn,
-          data preprocessing, model training & evaluation
+          • {t.technical_skills[5]}
         </Typography>
         <Typography variant="body2">
-          • Mobile App Development: React Native, Dart (Flutter), cross-platform
-          development, UI/UX design, state management (e.g., Redux, Provider)
+          • {t.technical_skills[6]}
         </Typography>
       </Grid>
     </>

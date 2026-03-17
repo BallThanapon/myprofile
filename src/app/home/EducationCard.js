@@ -16,6 +16,7 @@ import TimelineContent from "@mui/lab/TimelineContent";
 import TimelineDot from "@mui/lab/TimelineDot";
 import TimelineItem, { timelineItemClasses } from "@mui/lab/TimelineItem";
 import { motion } from "motion/react";
+import { useLang } from "../component/LanguageContext";
 
 function EducationCard() {
   const ref = useRef(null);
@@ -28,7 +29,7 @@ function EducationCard() {
       transition={{ duration: 1, delay: 0.8 }}
       viewport={{ once: true }}
     >
-      <Box sx={{py:10}}>
+      <Box sx={{ py: 10 }}>
         <Container maxWidth="md">
           <Grid container spacing={1}>
             <Grid size={{ md: 8 }}>
@@ -84,6 +85,7 @@ function EducationCard() {
 export default EducationCard;
 
 function EducationInfo() {
+  const { t } = useLang({});
   return (
     <Timeline
       sx={{
@@ -93,36 +95,25 @@ function EducationInfo() {
         },
       }}
     >
-      <TimelineItem>
-        <TimelineSeparator>
-          <TimelineDot />
-          <TimelineConnector />
-        </TimelineSeparator>
-        <TimelineContent>
-          <Typography variant="h6" component="span">
-            Nakhon pathom rajabhat university
-          </Typography>
-          <Typography variant="body2" color="text.disabled">
-            2016-2020
-          </Typography>
-          <Typography variant="body2" sx={{ pl: 1 }}>
-            • Major Industrial Computer Technology
-          </Typography>
-        </TimelineContent>
-      </TimelineItem>
-      <TimelineItem>
-        <TimelineSeparator>
-          <TimelineDot />
-        </TimelineSeparator>
-        <TimelineContent>
-          <Typography variant="h6" component="span">
-            Sriwichaiwitthaya school
-          </Typography>
-          <Typography variant="body2" color="text.disabled">
-            2009-2015
-          </Typography>
-        </TimelineContent>
-      </TimelineItem>
+      {t.education.map((data, i) => (
+        <TimelineItem key={i}>
+          <TimelineSeparator>
+            <TimelineDot />
+            <TimelineConnector />
+          </TimelineSeparator>
+          <TimelineContent>
+            <Typography variant="h6" component="span">
+              {data.name}
+            </Typography>
+            <Typography variant="body2" color="text.disabled">
+              {data.period}
+            </Typography>
+            <Typography variant="body2" sx={{ pl: 1 }}>
+              {data.degree}
+            </Typography>
+          </TimelineContent>
+        </TimelineItem>
+      ))}
     </Timeline>
   );
 }

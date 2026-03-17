@@ -16,6 +16,7 @@ import TimelineContent from "@mui/lab/TimelineContent";
 import TimelineDot from "@mui/lab/TimelineDot";
 import TimelineItem, { timelineItemClasses } from "@mui/lab/TimelineItem";
 import { motion } from "motion/react";
+import { useLang } from "../component/LanguageContext";
 
 function ExperienceCard() {
   const ref = useRef(null);
@@ -81,6 +82,7 @@ function ExperienceCard() {
 export default ExperienceCard;
 
 function ExperienceInfo() {
+  const {t} = useLang({});
   return (
     <Timeline
       sx={{
@@ -90,46 +92,68 @@ function ExperienceInfo() {
         },
       }}
     >
-      <TimelineItem>
+      {t.work_experience.map((data, i) => (
+        <TimelineItem key={i}>
+          <TimelineSeparator>
+            <TimelineDot />
+            <TimelineConnector />
+          </TimelineSeparator>
+          <TimelineContent>
+            <Typography variant="h6">
+              {data.organization}
+            </Typography>
+            <Typography variant="body1">
+              {data.position}
+            </Typography>
+            <Typography variant="body2" color="text.disabled">
+              {data.period}
+            </Typography>
+            {data.respons.map((respon,ii) => (
+              <Typography variant="body2" sx={{ pl: 1 }} key={ii}>
+                • {respon}
+              </Typography>
+            ))}
+          </TimelineContent>
+        </TimelineItem>
+      ))}
+
+
+      
+      {/* <TimelineItem>
         <TimelineSeparator>
           <TimelineDot />
           <TimelineConnector />
         </TimelineSeparator>
         <TimelineContent>
-          <Typography variant="h6" component="span">
-            Nakhon pathom rajabhat university
+          <Typography variant="h6" >
+            {t.work_experience[0].organization}
           </Typography>
-          <Typography variant="body1" component="span">
-            Position: Computer Technical Officer (Computer Center)
+          <Typography variant="body1">
+            Position: {t.work_experience[0].position}
           </Typography>
           <Typography variant="body2" color="text.disabled">
-            2022 – 2025
+            {t.work_experience[0].period}
           </Typography>
           <Typography variant="body2" sx={{ pl: 1 }}>
-            • Developed camera status monitoring system using React.js and
-            Python.
+            • {t.work_experience[0].respons[0]}
           </Typography>
           <Typography variant="body2" sx={{ pl: 1 }}>
-            • Designed APIs for better data access and integration.
+            • {t.work_experience[0].respons[1]}
           </Typography>
           <Typography variant="body2" sx={{ pl: 1 }}>
-            • Created vehicle license plate recognition system using .NET and
-            camera SDKs.
+            • {t.work_experience[0].respons[2]}
           </Typography>
           <Typography variant="body2" sx={{ pl: 1 }}>
-            • Built meeting document management systems using HTML, CSS,
-            JavaScript, PHP.
+            • {t.work_experience[0].respons[3]}
           </Typography>
           <Typography variant="body2" sx={{ pl: 1 }}>
-            • Developed convocation registration and queue card systems.
+            • {t.work_experience[0].respons[4]}
           </Typography>
           <Typography variant="body2" sx={{ pl: 1 }}>
-            • Managed CCTV systems and Access Control devices throughout
-            university buildings.
+            • {t.work_experience[0].respons[5]}
           </Typography>
           <Typography variant="body2" sx={{ pl: 1 }}>
-            • Maintained IoT systems, including weather monitoring and
-            electricity usage.
+            • {t.work_experience[0].respons[6]}
           </Typography>
         </TimelineContent>
       </TimelineItem>
@@ -156,7 +180,7 @@ function ExperienceInfo() {
             Authority using Deep Learning and CCTV cameras.
           </Typography>
         </TimelineContent>
-      </TimelineItem>
+      </TimelineItem> */}
     </Timeline>
   );
 }
