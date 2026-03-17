@@ -3,8 +3,12 @@
 import { Box, Grid, Typography, Container } from "@mui/material";
 import React from "react";
 import { motion } from "motion/react";
+import { useLang } from "../component/LanguageContext";
+
 
 function HeadCard() {
+  const { t} = useLang({});
+
   return (
     <Box sx={{ pt: 15 }}>
       <Grid container textAlign="center">
@@ -85,7 +89,8 @@ function HeadCard() {
                 viewport={{ once: true }}
               >
                 <Typography color="white" variant="h5">
-                  Hello, I'm Thanapon Thanasakonpong.
+                  {/* Hello, I'm Thanapon Thanasakonpong. */}
+                  {t.hello}
                 </Typography>
               </motion.div>
               <motion.div
@@ -95,7 +100,7 @@ function HeadCard() {
                 viewport={{ once: true }}
               >
                 <Typography color="white" variant="h5">
-                  Nice to meet you.
+                  {t.Nice}
                 </Typography>
               </motion.div>
 
@@ -106,8 +111,7 @@ function HeadCard() {
                 viewport={{ once: true }}
               >
                 <Typography color="white" sx={{ mt: 2 }}>
-                  A passionate Full Stack Developer with hands-on experience in
-                  both software development and IoT systems.
+                  {t.head1}
                 </Typography>
               </motion.div>
 
@@ -119,10 +123,7 @@ function HeadCard() {
               >
                 {" "}
                 <Typography color="white" sx={{ mt: 2 }}>
-                  I have worked on end-to-end solutions ranging from frontend
-                  interfaces to backend APIs, and I’ve also developed IoT
-                  applications involving data collection, automation, and smart
-                  monitoring.
+                  {t.head2}
                 </Typography>
               </motion.div>
               <motion.div
@@ -133,10 +134,7 @@ function HeadCard() {
               >
                 {" "}
                 <Typography color="white" sx={{ mt: 2 }}>
-                  I am currently seeking new opportunities to grow, collaborate,
-                  and contribute to impactful projects where I can apply and
-                  expand my skills. I’m excited to take on new challenges and
-                  continue evolving as a developer.
+                  {t.head3}
                 </Typography>
               </motion.div>
             </Container>

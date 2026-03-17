@@ -79,7 +79,7 @@ export default AwardsCard;
 
 function AwardsInfo() {
   return (
-    <>
+    <Box>
       <Grid container spacing={1.5} sx={{ mt: 2 }}>
         <Typography variant="body2">
           • Certificate of Completion: AI Development Workshop & Challenge Event
@@ -93,6 +93,89 @@ function AwardsInfo() {
           Recognition System Using Image Processing and AI Techniques
         </Typography>
       </Grid>
-    </>
+      <Grid container justifyContent="center" spacing={2} sx={{ m: 2 }}>
+        <Grid
+          item
+          size={{ md: 4, sm: 4 }}
+          justifyContent={"center"}
+          alignItems={"center"}
+        >
+          <motion.div
+            whileHover={{ scale: 2.5 }}
+            transition={{ duration: 0.7 }}
+          >
+            <Box
+              sx={{
+                boxShadow: 3,
+                borderRadius: "5px",
+                maxWidth: "100%",
+                borderColor: "#7b53ff",
+              }}
+              component="img"
+              alt="Cert1 image"
+              src="/cert/img1.jpg"
+            />
+          </motion.div>
+        </Grid>
+        <Grid size={{ md: 4, sm: 4 }}>
+          <motion.div
+            whileHover={{ scale: 2.5 }}
+            transition={{ duration: 0.7 }}
+          >
+            <Box
+              sx={{
+                boxShadow: 3,
+                borderRadius: "5px",
+                maxWidth: "100%",
+                borderColor: "#7b53ff",
+              }}
+              component="img"
+              alt="Cert2 image"
+              src="/cert/img2.jpg"
+            />
+          </motion.div>
+        </Grid>
+        <Grid size={{ md: 4, sm: 4 }}>
+          <Grid container spacing={2}>
+            <Grid item size={{ md: 12 }}>
+              <motion.div
+                whileHover={{ scale: 2.5 }}
+                transition={{ duration: 0.7 }}
+              >
+                <Box
+                  sx={{
+                    boxShadow: 3,
+                    borderRadius: "5px",
+                    maxWidth: "100%",
+                    borderColor: "#7b53ff",
+                  }}
+                  component="img"
+                  alt="Cert3 image"
+                  src="/cert/img3.jpg"
+                />
+              </motion.div>
+            </Grid>
+            <Grid item size={{ md: 12 }}>
+              <motion.div
+                whileHover={{ scale: 2.5 }}
+                transition={{ duration: 0.7 }}
+              >
+                <Box
+                  sx={{
+                    boxShadow: 3,
+                    borderRadius: "5px",
+                    maxWidth: "100%",
+                    borderColor: "#7b53ff",
+                  }}
+                  component="img"
+                  alt="Cert4 image"
+                  src="/cert/img4.jpg"
+                />
+              </motion.div>
+            </Grid>
+          </Grid>
+        </Grid>
+      </Grid>
+    </Box>
   );
 }

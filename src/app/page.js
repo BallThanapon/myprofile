@@ -1,10 +1,12 @@
-
 import HomePage from "./home/page";
+import { LanguageProvider, useLang } from "./component/LanguageContext";
 
 export default function Home() {
   return (
     <div>
-      <HomePage/>
+      <LanguageProvider>
+        <HomePage />
+      </LanguageProvider>
     </div>
   );
 }
