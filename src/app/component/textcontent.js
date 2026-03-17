@@ -1,4 +1,4 @@
-export const textcontent = {
+export const textContent = {
   th: {
     hello: "สวัสดีครับ ผมนายธนพนธ์ ธนสกนธ์พงศ์",
     Nice: "ยินดีทีได้รู้จักอย่างยิ่งครับ",

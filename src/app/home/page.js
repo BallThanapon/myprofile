@@ -10,8 +10,15 @@ import WorkCard from "./Workcard";
 import { useLang } from "../component/LanguageContext";
 import Fab from "@mui/material/Fab";
 import { Typography } from "@mui/material";
+import { useEffect } from "react";
 function HomePage() {
   const { t, toggleLang } = useLang({}) || {};
+
+  useEffect(() => {
+    console.log(t);
+    
+  }, [])
+  
   return (
     <>
       <div>

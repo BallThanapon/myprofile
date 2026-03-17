@@ -1,7 +1,7 @@
 "use client"
 
 import React, { createContext, useState, useContext } from 'react';
-import { textcontent } from './textcontent';
+import { textContent } from './textcontent';
 
 const LanguageContext = createContext();
 
@@ -13,7 +13,7 @@ export const LanguageProvider = ({ children }) => {
   };
 
   // ดึงคำแปลตามภาษาปัจจุบัน
-  const t = textcontent[lang];
+  const t = textContent[lang];
 
   return (
     <LanguageContext.Provider value={{ lang, toggleLang, t }}>

@@ -1,7 +1,8 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import {Box } from "@mui/material";
+import { Box } from "@mui/material";
 import Navbar from "./component/navbar";
+import { LanguageProvider } from "./component/LanguageContext";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,7 +26,7 @@ export default function RootLayout({ children }) {
         {/* <Box>
           <Navbar/>
         </Box> */}
-        { children }
+        <LanguageProvider>{children}</LanguageProvider>
       </body>
     </html>
   );
