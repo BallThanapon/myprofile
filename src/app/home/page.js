@@ -11,7 +11,7 @@ import { useLang } from "../component/LanguageContext";
 import Fab from "@mui/material/Fab";
 import { Typography } from "@mui/material";
 function HomePage() {
-  const { t, toggleLang } = useLang({});
+  const { t, toggleLang } = useLang({}) || {};
   return (
     <>
       <div>
