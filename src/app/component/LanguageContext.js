@@ -5,6 +5,7 @@ import { textContent } from './textcontent';
 
 const LanguageContext = createContext();
 
+
 export const LanguageProvider = ({ children }) => {
   const [lang, setLang] = useState('en'); // ค่าเริ่มต้นเป็นภาษาไทย
 

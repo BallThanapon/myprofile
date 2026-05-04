@@ -11,9 +11,13 @@ import {
 import { useRef } from "react";
 import { motion } from "motion/react";
 import { useLang } from "../component/LanguageContext";
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 function TechnicalCard() {
   const ref = useRef(null);
+
+  const prefersDarkMode = useMediaQuery("(prefers-color-scheme: dark)");
+  let bgcolor = prefersDarkMode ? "#243634" : "#f5f5f5"
 
   return (
     <motion.div
@@ -23,7 +27,7 @@ function TechnicalCard() {
       transition={{ duration: 1, delay: 0.5 }}
       viewport={{ once: true }}
     >
-      <Box sx={{ py: 10, bgcolor: "#f5f5f5" }}>
+      <Box sx={{ py: 10, bgcolor: bgcolor }}>
         <Container maxWidth="md">
           <Grid container spacing={1}>
             <Grid size={{ md: 4 }} sx={{ alignContent: "center", pr: 2 }}>

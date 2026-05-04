@@ -10,9 +10,13 @@ import {
 } from "@mui/material";
 import { useRef, useEffect } from "react";
 import { motion } from "motion/react";
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 function AwardsCard() {
   const ref = useRef(null);
+
+  const prefersDarkMode = useMediaQuery("(prefers-color-scheme: dark)");
+  let bgcolor = prefersDarkMode ? "#243634" : "#f5f5f5";
 
   return (
     <motion.div
@@ -22,7 +26,7 @@ function AwardsCard() {
       transition={{ duration: 1, delay: 0.5 }}
       viewport={{ once: true }}
     >
-      <Box sx={{ py: 10, bgcolor: "#f5f5f5" }}>
+      <Box sx={{ py: 10, bgcolor: bgcolor }}>
         <Container maxWidth="md">
           <Grid container spacing={1}>
             <Grid size={{ md: 4 }} sx={{ alignContent: "center", pr: 2 }}>
@@ -150,8 +154,8 @@ function AwardsInfo() {
                     borderColor: "#7b53ff",
                   }}
                   component="img"
-                  alt="Cert3 image"
-                  src="/cert/img3.jpg"
+                  alt="Cert4 image"
+                  src="/cert/img4.jpg"
                 />
               </motion.div>
             </Grid>
@@ -168,8 +172,8 @@ function AwardsInfo() {
                     borderColor: "#7b53ff",
                   }}
                   component="img"
-                  alt="Cert4 image"
-                  src="/cert/img4.jpg"
+                  alt="Cert3 image"
+                  src="/cert/img3.jpg"
                 />
               </motion.div>
             </Grid>

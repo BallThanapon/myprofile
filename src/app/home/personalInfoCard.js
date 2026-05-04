@@ -14,8 +14,11 @@ import CallIcon from "@mui/icons-material/Call";
 import EmailIcon from "@mui/icons-material/Email";
 import HomeIcon from "@mui/icons-material/Home";
 import { motion } from "motion/react";
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 function PersonnalInfoCard() {
+  const prefersDarkMode = useMediaQuery("(prefers-color-scheme: dark)");
+  let bgcolor = prefersDarkMode ? "#243634" : "#f5f5f5"
   const ref = useRef(null);
   return (
     <motion.div
@@ -28,59 +31,59 @@ function PersonnalInfoCard() {
       <Box
         sx={{
           py: 10,
-          bgcolor: "#f5f5f5"
+          bgcolor: bgcolor,
         }}
       >
-          <Container maxWidth={"md"}>
-            <Grid container spacing={1}>
-              <Grid size={{ md: 4 }} sx={{ alignContent: "center" }}>
+        <Container maxWidth={"md"}>
+          <Grid container spacing={1}>
+            <Grid size={{ md: 4 }} sx={{ alignContent: "center" }}>
+              <motion.div
+                ref={ref}
+                initial={{ opacity: 0, y: "-10%" }}
+                whileInView={{ opacity: 1, y: "0%" }}
+                transition={{ duration: 1, delay: 1.5 }}
+                viewport={{ once: true }}
+              >
+                <Box
+                  sx={{
+                    borderRadius: "10%",
+                    maxWidth: "95%",
+                    border: 10,
+                    borderColor: "#f5f5f5",
+                  }}
+                  component="img"
+                  alt="Profile image"
+                  src="/profile.png"
+                />
+              </motion.div>
+            </Grid>
+            <Grid size={{ md: 8 }}>
+              <Box>
                 <motion.div
                   ref={ref}
-                  initial={{ opacity: 0, y: "-10%" }}
-                  whileInView={{ opacity: 1, y: "0%" }}
+                  initial={{ opacity: 0, x: "10%" }}
+                  whileInView={{ opacity: 1, x: "0%" }}
                   transition={{ duration: 1, delay: 1.5 }}
                   viewport={{ once: true }}
                 >
-                  <Box
-                    sx={{
-                      borderRadius: "10%",
-                      maxWidth: "95%",
-                      border: 10,
-                      borderColor: "#f5f5f5",
-                    }}
-                    component="img"
-                    alt="Profile image"
-                    src="/profile.png"
-                  />
+                  <Typography variant="h5" align="right">
+                    Personal infomation
+                  </Typography>
                 </motion.div>
-              </Grid>
-              <Grid size={{ md: 8 }}>
-                <Box>
-                  <motion.div
-                    ref={ref}
-                    initial={{ opacity: 0, x: "10%" }}
-                    whileInView={{ opacity: 1, x: "0%" }}
-                    transition={{ duration: 1, delay: 1.5 }}
-                    viewport={{ once: true }}
-                  >
-                    <Typography variant="h5" align="right">
-                      Personal infomation
-                    </Typography>
-                  </motion.div>
-                  <Divider />
-                  <motion.div
-                    ref={ref}
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    transition={{ duration: 1, delay: 1.5 }}
-                    viewport={{ once: true }}
-                  >
-                    <PersonalInfo />
-                  </motion.div>
-                </Box>
-              </Grid>
+                <Divider />
+                <motion.div
+                  ref={ref}
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  transition={{ duration: 1, delay: 1.5 }}
+                  viewport={{ once: true }}
+                >
+                  <PersonalInfo />
+                </motion.div>
+              </Box>
             </Grid>
-          </Container>
+          </Grid>
+        </Container>
       </Box>
     </motion.div>
   );

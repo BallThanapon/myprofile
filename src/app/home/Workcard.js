@@ -11,16 +11,13 @@ import {
 import { useRef } from "react";
 import { motion, scale } from "motion/react";
 import * as React from "react";
-
-import Card from "@mui/material/Card";
-import CardActions from "@mui/material/CardActions";
-import CardContent from "@mui/material/CardContent";
-import CardMedia from "@mui/material/CardMedia";
-import Button from "@mui/material/Button";
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 function WorkCard() {
   const ref = useRef(null);
 
+  const prefersDarkMode = useMediaQuery("(prefers-color-scheme: dark)");
+  let bgcolor = prefersDarkMode ? "#243634" : "#f5f5f5";
   return (
     <>
       <Box sx={{ height: "20px", bgcolor: "#17B8A6" }} />
@@ -31,7 +28,7 @@ function WorkCard() {
         transition={{ duration: 1, delay: 0.8 }}
         viewport={{ once: true }}
       >
-        <Box sx={{ py: 10, bgcolor: "#f5f5f5" }}>
+        <Box sx={{ py: 10, bgcolor: bgcolor }}>
           <Container maxWidth="md">
             <Box>
               <motion.div
@@ -41,7 +38,9 @@ function WorkCard() {
                 transition={{ duration: 1, delay: 1.5 }}
                 viewport={{ once: true }}
               >
-                <Typography variant="h5">My Work</Typography>
+                <Typography variant="h5" textAlign="center">
+                  My Work
+                </Typography>
               </motion.div>
               <Divider />
               <Box sx={{ mt: 4 }}>
@@ -71,6 +70,8 @@ function WorkInfo() {
       <CCTVCard />
       <Divider sx={{ borderBottomWidth: 5, mt: 10 }} />
       <LPRCard />
+      <Divider sx={{ borderBottomWidth: 5, mt: 10 }} />
+      <MeetingCard />
     </div>
   );
 }
@@ -249,10 +250,13 @@ function LPRCard() {
           <motion.div
             initial={{ opacity: 0, x: "-40%" }}
             whileInView={{ opacity: 1, x: "0%" }}
-            transition={{ duration: 1, delay: 1 }}
+            transition={{ duration: 1, delay: 0.5 }}
             viewport={{ once: true }}
           >
-            <Typography sx={{ typography: { xs: "h6", sm: "h5", md: "h3" } }} textAlign={'center'}>
+            <Typography
+              sx={{ typography: { xs: "h6", sm: "h5", md: "h3" } }}
+              textAlign={"center"}
+            >
               License Plate Recognition Parking System
             </Typography>
           </motion.div>
@@ -296,6 +300,126 @@ function LPRCard() {
             <Typography textAlign="center">
               Create a vehicle management app to register cars, select plates
               for parking, and edit vehicle info
+            </Typography>
+          </Container>
+        </Grid>
+
+        <Grid size={{ xs: 12, sm: 6 }}>
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            transition={{ duration: 0.7 }}
+          >
+            <Box
+              sx={{
+                width: "100%",
+                borderRadius: "20px 0px 20px 0px",
+                mt: 10,
+                textAlign: "center",
+              }}
+              component="img"
+              alt="Code thinking image"
+              src="/image/work/lpr/lpr2.jpg"
+            ></Box>
+          </motion.div>
+        </Grid>
+        <Grid size={{ xs: 12 }}>
+          <Container maxWidth="sm">
+            <Typography textAlign="center">
+              The barrier gate controller can be controlled via an application.
+            </Typography>
+          </Container>
+        </Grid>
+      </Grid>
+    </Box>
+  );
+}
+
+function MeetingCard() {
+  return (
+    <Box sx={{ mt: 10 }}>
+      <Grid container spacing={4} justifyContent="center" alignItems="center">
+        <Grid size={{ xs: 12 }} justifyItems="center">
+          <motion.div
+            initial={{ opacity: 0, x: "-40%" }}
+            whileInView={{ opacity: 1, x: "0%" }}
+            transition={{ duration: 1, delay: 0.5 }}
+            viewport={{ once: true }}
+          >
+            <Typography
+              sx={{ typography: { xs: "h6", sm: "h5", md: "h3" } }}
+              textAlign={"center"}
+            >
+              Meeting Agenda Management System
+            </Typography>
+          </motion.div>
+        </Grid>
+        <Grid size={{ xs: 12 }}>
+          <Container maxWidth="sm">
+            <motion.div
+              initial={{ opacity: 0, x: "20%" }}
+              whileInView={{ opacity: 1, x: "0%" }}
+              transition={{ duration: 1.5, delay: 1 }}
+              viewport={{ once: true }}
+            >
+              <Typography textAlign="center">
+                A Meeting Agenda Management System helps organize meeting topics
+                in an orderly way, covering preparation, review, and
+                prioritizing items before the meeting starts.
+              </Typography>
+            </motion.div>
+          </Container>
+        </Grid>
+        <Grid size={{ xs: 12, sm: 6 }}>
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            transition={{ duration: 0.7 }}
+          >
+            <Box
+              sx={{
+                width: "100%",
+                borderRadius: "20px 0px 20px 0px",
+                mt: 10,
+                textAlign: "center",
+              }}
+              component="img"
+              alt="Code thinking image"
+              src="/image/work/meeting/img1.png"
+            ></Box>
+          </motion.div>
+        </Grid>
+        <Grid size={{ xs: 12 }}>
+          <Container maxWidth="sm">
+            <Typography textAlign="center">
+              Users can draft meeting agendas and attach supporting documents
+              for formal submission.
+            </Typography>
+          </Container>
+        </Grid>
+
+        <Grid size={{ xs: 12, sm: 6 }}>
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            transition={{ duration: 0.7 }}
+          >
+            <Box
+              sx={{
+                width: "100%",
+                borderRadius: "20px 0px 20px 0px",
+                mt: 10,
+                textAlign: "center",
+              }}
+              component="img"
+              alt="Code thinking image"
+              src="/image/work/meeting/img2.png"
+            ></Box>
+          </motion.div>
+        </Grid>
+        <Grid size={{ xs: 12 }}>
+          <Container maxWidth="sm">
+            <Typography textAlign="center">
+              The administrator receives the proposed agenda, screens the
+              content, and defines the document workflow for participant
+              approval.
             </Typography>
           </Container>
         </Grid>

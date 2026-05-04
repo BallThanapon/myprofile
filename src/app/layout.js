@@ -1,8 +1,12 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Noto_Sans_Thai } from "next/font/google";
 import "./globals.css";
 import { Box } from "@mui/material";
 import Navbar from "./component/navbar";
 import { LanguageProvider } from "./component/LanguageContext";
+
+const nato = Noto_Sans_Thai({
+  subsets: ["thai"],
+});
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -22,7 +26,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body className={`${nato.className} ${geistSans.variable} ${geistMono.variable}}`}>
         {/* <Box>
           <Navbar/>
         </Box> */}
